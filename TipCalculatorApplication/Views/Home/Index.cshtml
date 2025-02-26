@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Tip Calculator";
+}
+
+<h2>Tip Calculator</h2>
+
+@if (ViewBag.Error != null)
+{
+    <p style="color: red;">@ViewBag.Error</p>
+}
+
+<form method="post" asp-action="Calculate">
+    <label for="mealCost">Enter Meal Cost:</label>
+    <input type="number" step="0.01" name="mealCost" required>
+    <button type="submit">Calculate</button>
+</form>
+
+@if (ViewBag.Tip15 != null)
+{
+    <p>15% Tip: $@ViewBag.Tip15</p>
+    <p>20% Tip: $@ViewBag.Tip20</p>
+    <p>25% Tip: $@ViewBag.Tip25</p>
+}
+
